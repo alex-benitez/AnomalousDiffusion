@@ -1,0 +1,43 @@
+from andi_datasets.datasets_challenge import challenge_theory_dataset
+import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
+import numpy as np
+import time
+
+
+%matplotlib notebook
+
+traj = 10
+X1, Y1, X2, Y2, X3, Y3 = challenge_theory_dataset(N = traj,tasks=1,dimensions=[1,2,3])
+
+'''
+Now we need to have the X positions and the Y positions, this will be easy if we just:
+'''
+
+
+
+ax = plt.axes(projection='3d')
+    
+for i in range(traj):
+    xpos = []
+    current = X1[0][i]
+    for itera,val in enumerate(X1[0][i]):
+        xpos.append(sum(X1[0][i][:itera]))
+        
+    ypos = []
+    for itera,val in enumerate(X1[1][i]):
+        ypos.append(sum(X1[1][i][:itera]))
+        
+    zpos = []
+    for itera,val in enumerate(X1[2][i]):
+        zpos.append(sum(X1[2][i][:itera]))
+        
+        
+    lowest = min(len(xpos),len(ypos),len(zpos)) 
+    xpos = xpos[:lowest]
+    ypos = ypos[:lowest]
+    zpos = zpos[:lowest]    
+    ax.plot3D(xpos,ypos,zpos)
+    # plt.plot(xpos,ypos)
+    
+plt.savefig('spidah.pdf',dpi=300)
