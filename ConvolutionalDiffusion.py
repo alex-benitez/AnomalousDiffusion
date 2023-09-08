@@ -76,6 +76,7 @@ model.add(Flatten())
 model.add(Dense(5,activation='softmax'))
 model.summary()
 model.compile(optimizer=Adam(learning_rate=0.001), loss='mse')
+
 model.fit(X2[0], alpha, epochs=30)
 
 
@@ -101,7 +102,7 @@ for i in range(len(yhat)):
         accurate += 1
     
 try:
-    model.save('/home/alex/Desktop/KURF/Scripts/Models/Convolutional2')
+    model.save('/home/alex/Desktop/KURF/Scripts/Models/Convolutional3')
 except:
     model.save('./')
 

@@ -25,9 +25,9 @@ for i in range(5):
     print('aaaaaaa')
     for big in range(N):
         if i==0 or i==1:
-            exponent = 0.5
+            exponent = 0.75
         else:
-            exponent = 1.5
+            exponent = 1.9
         trajectories[i].append(datasets_theory().create_dataset(T=min_T,N_models=1,models=i,exponents=[exponent])[0])
     
 # alpha = [[0]*i + [1] + [0]*(4-i) for i in range(5)]  Brilliantly condensed code which will never see the light of day again
@@ -43,6 +43,7 @@ for i in range(len(trajectories)):
         trajectories[i],alpha = ct.normalize_data(trajectories[i],[i for x in range(len(trajectories))])
         del trajectories[i][j][320]
         del trajectories[i][j][320]
+        plt.plot(trajectories[i][j])
 
     
 model = keras.models.load_model('/home/alex/Desktop/KURF/Scripts/Models/Convolutional_Final')
@@ -50,7 +51,9 @@ for i in range(5):
     for pos,trajectory in enumerate(trajectories[i]):
         trajectory = np.array(trajectory)
         trajectories[i][pos] = np.reshape(trajectory,(1,320,1))
+        
 
+    
 accurate = 0
 yhat = [[] for i in range(5)]
 models = ['attm', 'ctrw', 'fbm', 'lw', 'sbm']
