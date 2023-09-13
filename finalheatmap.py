@@ -27,7 +27,7 @@ min_T = 320
 
 
 
-X1, Y1, trajectories, num_model, X3, Y3 = challenge_theory_dataset(N=N,tasks=2,dimensions=1,min_T=min_T,max_T=min_T+1,save_dataset=True,path_datasets='./datasets')
+X1, Y1, trajectories, num_model, X3, Y3 = challenge_theory_dataset(N=N,tasks=2,dimensions=1,min_T=min_T,max_T=min_T+1,save_dataset=False,path_datasets='./datasets')
 num_model = num_model[0]
 trajectories = trajectories[0]
 
