@@ -77,7 +77,7 @@ model.add(Dense(5,activation='softmax'))
 model.summary()
 model.compile(optimizer=Adam(learning_rate=0.001), loss='mse')
 
-model.fit(X2[trash:///datasetloading.py0], alpha, epochs=30)
+model.fit(X2[0], alpha, epochs=30)
 
 
 X1, Y1, test_data, test_check, X3, Y3 = challenge_theory_dataset(N=500,tasks=2,dimensions=1,min_T=min_T,max_T=min_T+1,load_dataset=False,path_datasets='./datasets')
