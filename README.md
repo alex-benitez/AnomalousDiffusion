@@ -1,4 +1,6 @@
 # AnomalousDiffusion
+(Despite what github might claim, this code is written in Python, not PureBasic)
+
 Repository of all code for the Research Fellowship, summer 2023
 
 The code contained in this repository is a compilation of all the code written by Alex Benitez for the King's Undergraduate Research Fellowship.
